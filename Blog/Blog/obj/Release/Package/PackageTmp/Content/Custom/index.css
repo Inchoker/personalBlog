@@ -1,0 +1,50 @@
+.fakeimg {
+    height: 200px;
+    width: auto;
+}
+
+#chanDung {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#cover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("cover.jpg");
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.jumbotron {
+    padding: 0px!important;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 576px) {
+    .jumbotron {
+        padding: 0px!important;
+    }
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+#cover h1 {
+    font-size: 3.5rem;
+}
+
+#cover p {
+    font-size: 2rem;
+}

@@ -1,0 +1,171 @@
+﻿
+@model Blog.Models.UserLogin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quản lý màn hình</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap" rel="stylesheet">
+    <style type="text/css">
+
+        .form-control {
+            box-shadow: none;
+            border-color: #ddd;
+        }
+
+            .form-control:focus {
+                border-color: #4aba70;
+            }
+
+        .login-form {
+            width: 350px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+            .login-form form {
+                color: #434343;
+                border-radius: 1px;
+                margin-bottom: 10px;
+                background: #fff;
+                border: 1px solid #f3f3f3;
+                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+                padding: 30px;
+            }
+
+            .login-form h4 {
+                font-family: 'Noto Serif', serif;
+                text-align: center;
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+
+            .login-form .form-control, .login-form .btn {
+                min-height: 40px;
+                border-radius: 2px;
+                transition: all 0.5s;
+            }
+
+
+
+            .login-form .btn {
+                background: #4aba70;
+                border: none;
+                line-height: normal;
+            }
+
+                .login-form .btn:hover, .login-form .btn:focus {
+                    background: #42ae68;
+                }
+
+            .login-form .checkbox-inline {
+                float: left;
+            }
+
+            .login-form input[type="checkbox"] {
+                margin-top: 2px;
+            }
+
+            .login-form .forgot-link {
+                float: right;
+            }
+
+            .login-form .small {
+                font-size: 13px;
+            }
+
+            .login-form a {
+                color: #4aba70;
+            }
+
+        #overlay {
+            position: relative;
+        }
+
+        canvas {
+            position: absolute;
+        }
+
+        .ityped-cursor {
+            font-size: 2.2rem;
+            opacity: 1;
+            -webkit-animation: blink 0.3s infinite;
+            -moz-animation: blink 0.3s infinite;
+            animation: blink 0.3s infinite;
+            animation-direction: alternate;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="CloudBackGround"></div>
+    <div id="overlay">
+        <div class="login-form">
+
+            @using (Html.BeginForm())
+            {
+                <img class="img-fluid" src="~/Content/LoginScript/logo.png">
+                <h4>ĐĂNG NHẬP BLOG</h4>
+
+                <div class="form-group">
+
+                    @Html.TextBoxFor(x => Model.userid, new { @class = "form-control", maxlength = 32, @placeholder = "", @autofocus = "true" })
+                    @*<input autofocus="true" class="form-control form-control-sm" id="tenTcap" name="tenTcap" placeholder="" type="text" value="">*@
+
+                </div>
+
+                <div class="form-group">
+                    @Html.PasswordFor(x => Model.userpass, new { @class = "form-control", maxlength = 32, @placeholder = "Mật khẩu..." })
+                    @*<input class="form-control form-control-sm" id="matKhau" name="matKhau" placeholder="Mật khẩu" type="password">*@
+
+                </div>
+                <div class="form-group small clearfix">
+                    <!--
+                    <label class="checkbox-inline"><input type="checkbox"> Remember me</label>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                    -->
+                    @Html.ValidationSummary(false)
+                </div>
+                <input type="submit" class="btn btn-primary btn-block btn-lg" value="Đăng nhập">
+            }
+
+            <div class="text-center small">Thiết kế bởi <a href="">HTL</i> Technology</a></div>
+        </div>
+    </div>
+    @*<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>*@
+    <script src="~/Content/LoginScript/itype.js"></script>
+    <script>
+        ityped.init("#userid", {
+            placeholder: true,
+            showCursor: false
+        })
+    </script>
+    @*<script src="~/Content/HuyTL_CustomEffect/JS/InnerEffect.js"></script>*@
+    <script src="~/Content/LoginScript/three.r92.min.js"></script>
+    <script src="~/Content/LoginScript/vanta.clouds.min.js"></script>
+    <script>
+        VANTA.CLOUDS({
+            el: "#CloudBackGround",
+            backgroundColor: 0xffffff,
+            skyColor: 0x68b8d7,
+            cloudColor: 0xadc1de,
+            cloudShadowColor: 0x183550,
+            sunColor: 0xff9919,
+            sunGlareColor: 0xff6633,
+            sunlightColor: 0xff9933,
+
+        })
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<style>
+form {
+  position: relative;
+  width: 250px;
+  margin: 0 auto;
+  background: rgba(130,130,130,.3);
+  padding: 20px 22px;
+  border: 1px solid;
+  border-top-color: rgba(255,255,255,.4);
+  border-left-color: rgba(255,255,255,.4);
+  border-bottom-color: rgba(60,60,60,.4);
+  border-right-color: rgba(60,60,60,.4);
+}
+</style>
+<div id="CloudBackGround"></div>
+<form action="">
+    
+  <label for=""></label>
+  <input type="text" name="" id="" placeholder="email" class="email">
+    
+  <label for=""></label>
+  <input type="password" name="" id="" placeholder="password" class="pass">
+    
+  <button type="submit">login to your account</button>
+    
+</form>
+<script src="three.r92.min.js"></script>
+<script src="vanta.clouds.min.js"></script>
+<script>
+VANTA.CLOUDS({
+el: "#CloudBackGround",
+backgroundColor: 0xffffff,
+skyColor:0x68b8d7,
+cloudColor:0xadc1de,
+cloudShadowColor:0x183550,
+sunColor:0xff9919,
+sunGlareColor:0xff6633,
+sunlightColor:0xff9933,
+
+})
+</script>
